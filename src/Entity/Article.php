@@ -168,12 +168,12 @@ class Article
      */
     public function prePersist()
     {
-        $this->createdAt(new \DateTime());
+        $this->setCreatedAt(new \DateTime());
     }
 
 
     /**
-     * @ORM\preUpdate
+     * @ORM\PreUpdate
      */
     public function preUpdate()
     {
