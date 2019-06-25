@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ article.title }}</h1>
+    <p>
+        Catégorie : <a href="{{ path('category_show', {id: article.category.id}) }}">{{ article.category.label }}</a>
+
+    </p>
+    <div>
+        Tags :
+        <ul>
+            {% for tag in article.tags %}
+                <li><a href="{{ path('tag_show', {id: tag.id}) }}">{{ tag.label }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

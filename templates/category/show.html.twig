@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.label }}{% endblock %}
+
+{% block body %}
+
+    <h1>{{ category.label }}</h1>
+
+    {% for article in category.articles %}
+        {% include 'article/_thumbnail.html.twig' with {'article' : article} only %}
+    {% endfor %}
+
+
+{% endblock %}

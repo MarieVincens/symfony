@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+        <nav>
+            <ul>
+                <li><a href="{{ path('homepage') }}">Accueil</a></li>
+            </ul>
+        </nav>
+        {% block body %}{% endblock %}
+        <footer>
+            {{ render(controller('App\\Controller\\DefaultController::navCategory')) }}
+        </footer>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
